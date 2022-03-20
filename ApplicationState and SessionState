@@ -1,0 +1,34 @@
+Session State Variable:
+These are available across all pages, for a single session. (Single User Global Data)
+Only current state has access to the session state
+For Example:
+If a user login to his account then a session state is created which is avilable to that particular user only.
+
+Application State:
+Available across all pages and all session
+Like Multi User Global Data. All user can edit that application state variables
+
+Aplication Level Events:
+Available at Global.asax files
+
+1. Application_Start:
+This event get fired when 1st req in web form in the application reaches IIS (application is not already running). 
+Loads application assembly into memories then application starts and this events gets fires 
+2. Application_End:
+This event gets fired when there are no more active session. When last session gets expired then this events gets fired.
+3. Application_Error:
+This events gets fires when an unhandled exception occurs
+
+Session Level Events:
+Available at Global.asax files
+
+1. Session_Start:
+This event gets fired when new user visit application, when new user connects to that application. Session can be unique intance of application with unique instance id.
+
+2. Session_End:
+When session gets timed out. Can be changed in web.config file using Timed out attribute
+
+Timed out by default is 20 mins
+
+By default session uses cookies 
+To change it use cookieless attribute to true in web.config file
